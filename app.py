@@ -13,6 +13,10 @@ def convert2():
     output2_string.set(str(kg) + " Kg")
 
 
+root = tk.Tk()
+root.tk.call("package", "require", "msgcat")
+root.destroy()
+
 root = ttk.Window(themename = 'darkly')
 root.geometry("400x300")
 root.title("Unit Converter")
