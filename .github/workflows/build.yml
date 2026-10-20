@@ -32,7 +32,7 @@ jobs:
 
       - name: Build Windows executable
         run: |
-          pyinstaller --noconfirm --clean --onefile --windowed --name UnitConverter app.py
+          pyinstaller --noconfirm --clean --onefile --windowed --name UnitConverter --hidden-import=PIL._tkinter_finder --hidden-import=PIL._imagingtk app.py
 
       - name: Upload Windows executable
         uses: actions/upload-artifact@v4
@@ -61,7 +61,7 @@ jobs:
 
       - name: Build macOS app
         run: |
-          pyinstaller --noconfirm --clean --windowed --name UnitConverter app.py
+          pyinstaller --noconfirm --clean --windowed --name UnitConverter --hidden-import=PIL._tkinter_finder --hidden-import=PIL._imagingtk app.py
 
       - name: Package macOS app
         run: |
@@ -99,7 +99,7 @@ jobs:
 
       - name: Build Linux executable
         run: |
-          pyinstaller --noconfirm --clean --onefile --windowed --name UnitConverter app.py
+          pyinstaller --noconfirm --clean --onefile --windowed --name UnitConverter --hidden-import=PIL._tkinter_finder --hidden-import=PIL._imagingtk app.py
 
       - name: Upload Linux executable
         uses: actions/upload-artifact@v4
